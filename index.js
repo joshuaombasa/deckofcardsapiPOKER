@@ -19,6 +19,10 @@ drawBtn.addEventListener("click", () => {
     console.log(deckId)
     fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
         .then(response => response.json())
-        .then(data => console.log(data)
+        .then(data => {
+            console.log(data.cards[0].image)
+            document.getElementById("card-1").innerHTML = `<img class="card-img" src=${data.cards[0].image} />`
+            document.getElementById("card-2").innerHTML = `<img class="card-img" src=${data.cards[1].image} />`
+        }
         )
 })
