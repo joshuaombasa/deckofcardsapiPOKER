@@ -31,7 +31,14 @@ drawBtn.addEventListener("click", () => {
 
             remainingCards.textContent = `Remaining Cards: ${data.remaining}`
 
-            drawBtn.disabled = data.remaining === 0 ? true : false
+            if (data.remaining === 0) {
+                drawBtn.disabled = true
+                if (computerWinsCount > yourWinsCount) {
+                    document.getElementById("game-winner-text").textContent = "Computer wins the gam"
+                } else {
+                    document.getElementById("game-winner-text").textContent = "You win the game"
+                }
+            }
 
         }
         )
