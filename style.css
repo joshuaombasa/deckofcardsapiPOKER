@@ -1,0 +1,61 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: whitesmoke;
+}
+
+.container {
+    width: 600px;
+    background-image: url("img/table.png");
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.new-deck-btn, .draw-btn{
+    background-color: #FFF100;
+    cursor: pointer;
+    border: none;
+    margin-top: 0px;
+}
+
+.nav-section {
+    display:  flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: flex-start;
+    
+    margin-top: 0px;
+
+}
+
+.nav-section h4 {
+    margin: 0;
+}
+
+.game-winner-text {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    height: 120px;
+    width: calc(120px * 5/7);
+    border:  1px solid black;
+    border-radius: 6px;
+}
+
+.draw-btn {
+    padding: 10px;
+    width: 600px;
+}
