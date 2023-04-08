@@ -51,7 +51,8 @@ function determineCardWinner(card1, card2) {
         winningMessage = "War!"
     }
 
-    
+    document.getElementById("your-score").textContent = `Your score: ${yourWinsCount}`
+    document.getElementById("computer-score").textContent = `Computer score: ${computerWinsCount}`
 
     document.getElementById("game-winner-text").textContent = winningMessage
     console.log(winningMessage)
