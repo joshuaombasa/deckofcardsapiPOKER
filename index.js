@@ -31,6 +31,8 @@ drawBtn.addEventListener("click", () => {
 
             remainingCards.textContent = `Remaining Cards: ${data.remaining}`
 
+            drawBtn.disable = data.remaining < 1 ? true : false
+
         }
         )
 })
