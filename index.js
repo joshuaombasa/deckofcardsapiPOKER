@@ -20,9 +20,11 @@ drawBtn.addEventListener("click", () => {
     fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
         .then(response => response.json())
         .then(data => {
-            console.log(data.cards[0].image)
+            console.log(data)
             document.getElementById("card-1").innerHTML = `<img class="card-img" src=${data.cards[0].image} />`
             document.getElementById("card-2").innerHTML = `<img class="card-img" src=${data.cards[1].image} />`
+
+            determineCardWinner(data.cards[0].value, data.cards[1].value)
         }
         )
 })
@@ -32,8 +34,8 @@ function determineCardWinner(card1, card2) {
     const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
     "10", "JACK", "QUEEN", "KING", "ACE"]
 
-    const indexOfCard1 = valueOptions.indexOf()
-    const indexOfCard2 = valueOptions.indexOf()
+    const indexOfCard1 = valueOptions.indexOf(card1)
+    const indexOfCard2 = valueOptions.indexOf(card2)
 
     console.log(indexOfCard1, indexOfCard2)
 
