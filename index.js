@@ -1,6 +1,8 @@
 const newDeckBtn = document.getElementById("new-deck-btn")
 
 const drawBtn = document.getElementById("draw-btn")
+let computerWinsCount = 0
+let yourWinsCount = 0
 
 let deckId
 
@@ -41,9 +43,15 @@ function determineCardWinner(card1, card2) {
 
     if (indexOfCard1 > indexOfCard2) {
         winningMessage = "Computer wins the gam"
+        computerWinsCount ++
     } else if (indexOfCard1 < indexOfCard2) {
+        yourWinsCount ++
         winningMessage = "You win the game"
+    } else {
+        winningMessage = "War!"
     }
+
+    
 
     document.getElementById("game-winner-text").textContent = winningMessage
     console.log(winningMessage)
