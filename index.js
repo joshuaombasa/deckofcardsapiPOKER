@@ -37,8 +37,15 @@ function determineCardWinner(card1, card2) {
     const indexOfCard1 = valueOptions.indexOf(card1)
     const indexOfCard2 = valueOptions.indexOf(card2)
 
-    const winningMessage = indexOfCard1 > indexOfCard2 ? "Computer wins" : "You win"
+    let winningMessage 
 
+    if (indexOfCard1 > indexOfCard2) {
+        winningMessage = "Computer wins the gam"
+    } else if (indexOfCard1 < indexOfCard2) {
+        winningMessage = "You win the game"
+    }
+
+    document.getElementById("game-winner-text").textContent = winningMessage
     console.log(winningMessage)
 
 }
