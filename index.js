@@ -37,6 +37,8 @@ function determineCardWinner(card1, card2) {
     const indexOfCard1 = valueOptions.indexOf(card1)
     const indexOfCard2 = valueOptions.indexOf(card2)
 
-    console.log(indexOfCard1, indexOfCard2)
+    const winningMessage = indexOfCard1 > indexOfCard2 ? "Computer wins" : "You win"
+
+    console.log(winningMessage)
 
 }
