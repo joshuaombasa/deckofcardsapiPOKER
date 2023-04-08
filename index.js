@@ -1,6 +1,6 @@
 const newDeckBtn = document.getElementById("new-deck-btn")
-
 const drawBtn = document.getElementById("draw-btn")
+const remainingCards = document.getElementById("remaining-cards")
 let computerWinsCount = 0
 let yourWinsCount = 0
 
@@ -12,6 +12,7 @@ newDeckBtn.addEventListener("click", () => {
         .then(data => {
             console.log(data)
             deckId = data.deck_id
+            remainingCards.textContent = `Remaining Cards: ${data.remaining}`
             console.log(data.deck_id)
         })
 })
@@ -27,6 +28,9 @@ drawBtn.addEventListener("click", () => {
             document.getElementById("card-2").innerHTML = `<img class="card-img" src=${data.cards[1].image} />`
 
             determineCardWinner(data.cards[0].value, data.cards[1].value)
+
+            remainingCards.textContent = `Remaining Cards: ${data.remaining}`
+
         }
         )
 })
