@@ -43,19 +43,22 @@ body {
 
 .cards-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     padding: 20px;
 }
 
 .card {
-    height: 120px;
-    width: calc(120px * 5/7);
-    border:  1px solid black;
+    height: 240px;
+    width: calc(240px * 5/7);
     border-radius: 6px;
 }
 
 .draw-btn {
     padding: 10px;
     width: 600px;
+}
+
+.card-img {
+    width: 100%;
 }
