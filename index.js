@@ -23,7 +23,7 @@ drawBtn.addEventListener("click", () => {
     fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            console.log(data.remaining)
             document.getElementById("card-1").innerHTML = `<img class="card-img" src=${data.cards[0].image} />`
             document.getElementById("card-2").innerHTML = `<img class="card-img" src=${data.cards[1].image} />`
 
@@ -31,7 +31,9 @@ drawBtn.addEventListener("click", () => {
 
             remainingCards.textContent = `Remaining Cards: ${data.remaining}`
 
-            drawBtn.disable = data.remaining < 1 ? true : false
+            if (data.remaining === 0) {
+                console.log("End")
+            } 
 
         }
         )
