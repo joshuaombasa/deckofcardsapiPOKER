@@ -26,3 +26,13 @@ drawBtn.addEventListener("click", () => {
         }
         )
 })
+
+
+function determineCardWinner() {
+    const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
+    "10", "JACK", "QUEEN", "KING", "ACE"]
+
+    const indexOfCard1 = valueOptions.indexOf()
+    const indexOfCard2 = valueOptions.indexOf()
+
+}
